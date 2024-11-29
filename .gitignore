@@ -4,3 +4,4 @@
 *.dSYM/
 .vscode/
 Test.cpp
+Out.txt
