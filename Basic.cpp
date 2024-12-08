@@ -15,7 +15,8 @@ void Clear(Args&... args){
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
 void Main(int Case){
-	
+	int n;scanf("%d",&n);
+	printf("%d\n",n*n);
 }
 
 int main(){
