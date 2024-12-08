@@ -15,15 +15,6 @@ void Clear(Args&... args){
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
 void Main(int Case){
-	int n;scanf("%d",&n);
-	std::function<int(int,int)>Pow=[&](int a,int b){
-		int r=1;
-		while(b){
-			if(b&1){r=r*a;}
-			a=a*a;b>>1;
-		}
-		return r;
-	};
 }
 
 int main(){
