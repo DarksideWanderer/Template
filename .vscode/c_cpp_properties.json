@@ -26,7 +26,7 @@
             "cppStandard": "c++20",
             "intelliSenseMode": "macos-gcc-arm64",
             "forcedInclude": [],
-            "mergeConfigurations": true
+            "mergeConfigurations": false
         }
     ],
     "version": 4
