@@ -1,30 +1,24 @@
 {
     "version": "2.0.0",
     "tasks": [
-        {
-            "label": "Compile",
-            "command": "/opt/homebrew/Cellar/gcc/14.2.0_1/bin/aarch64-apple-darwin24-g++-14",
-            "args": [
-                "-fdiagnostics-color=always",
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
-            ],
-            "type": "shell",
-            "group": "build",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
-            }
-        },
 		{
-			"label": "Open Terminal",
-			"type": "shell",
-			"command": "osascript -e 'tell application \"Terminal\"\ndo script \"echo hello\"\nend tell'",
-			"problemMatcher": []
-		}
+		    "label": "Compile",
+		    "command": "/opt/homebrew/Cellar/gcc/14.2.0_1/bin/aarch64-apple-darwin24-g++-14",
+		    "args": [
+		        "-fdiagnostics-color=always",
+		        "-g",
+		        "${file}",
+		        "-o",
+		        "${fileDirname}/${fileBasenameNoExtension}"
+		    ],
+		    "type": "shell",
+		    "group": "build",
+		    "presentation": {
+		        "echo": true,
+		        "reveal": "always",
+		        "focus": false,
+		        "panel": "shared"
+		    }
+		},
     ]
 }
