@@ -1,8 +1,9 @@
+### Basic
+
+```cpp
 #include<bits/stdc++.h>
 //#define Debug
 using std::vector;
-using std::set;
-using std::array;
 using std::pair;
 #define fi first
 #define se second
@@ -15,8 +16,10 @@ void Clear(Args&... args){
     (Clear(args), ...);//必须加括号
 }
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
+//std::uniform_int_distribution<int>U(Down,Up);
 
 void Main(int Case){
+	
 }
 
 int main(){
@@ -30,3 +33,22 @@ int main(){
 	}
 	return 0;
 }
+```
+
+### Math
+
+积性函数可以使用 $O(\sqrt{n})$ 或者 $O(n)$ 的做法来做.
+
+$$
+\varphi(x*p)=\begin{cases}
+\varphi(x)*p &x\mod p=0\\
+\varphi(x)*(p-1) &x\mod p \not=0 
+\end{cases} 
+$$
+
+$$
+\mu(x*p)=\begin{cases}
+\mu(x)*(-1)&x\mod p \not=0\\
+0 &otherwise
+\end{cases}
+$$
