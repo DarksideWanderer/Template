@@ -1,6 +1,11 @@
 ### Basic
 
 ```cpp
+template<class InputIt, class UnaryFunction>
+UnaryFunction for_each(InputIt first, InputIt last, UnaryFunction f);
+```
+
+```cpp
 #include<bits/stdc++.h>
 //#define Debug
 using std::vector;
