@@ -14,15 +14,29 @@ template<typename... Args>
 void Clear(Args&... args){
     (Clear(args), ...);//必须加括号
 }
-template<typename O,typename T>
-void For_each(O opt,T&x){opt(x);}
-template<typename O,typename...T>
-void For_each(O opt,T&...x){
-	(opt(x),...);
-}
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
+
 void Main(int Case){
+	int n;
+	vector<int>Arr;
+	
+	scanf("%d",&n);
+	Arr.resize(n+10);
+	
+	for(int i=1;i<=n;i++){
+		scanf("%d",&Arr[i]);
+	}
+	bool flag=false;
+	for(int i=1;i<n;i++){
+		int a=std::min(Arr[i],Arr[i+1]);
+		int b=Arr[i]+Arr[i+1]-a;
+		if(a*2>b){
+			flag=true;
+		}
+	}
+	if(flag)puts("Yes");
+	else puts("No");
 }
 
 int main(){

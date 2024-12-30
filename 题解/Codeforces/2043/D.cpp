@@ -22,7 +22,24 @@ void For_each(O opt,T&...x){
 }
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
+ll Gcd(ll a,ll b){
+	return a==0||b==0?a+b:Gcd(b,a%b);
+}
+ll l,r,g;
 void Main(int Case){
+	scanf("%lld %lld %lld",&l,&r,&g);
+	ll lt=(l+g-1)/g;
+	ll rt=r/g;
+	ll ansj=-1,ansi=-1;
+	for(ll i=rt-lt+1;i;i--){
+		for(ll j=lt;j+i-1<=rt;j++){
+			if(Gcd(j,j+i-1)==1){
+				printf("%lld %lld\n",j*g,g*(j+i-1));
+				return ;
+			}
+		}
+	}
+	puts("-1 -1");
 }
 
 int main(){

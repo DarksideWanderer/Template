@@ -14,15 +14,33 @@ template<typename... Args>
 void Clear(Args&... args){
     (Clear(args), ...);//必须加括号
 }
-template<typename O,typename T>
-void For_each(O opt,T&x){opt(x);}
-template<typename O,typename...T>
-void For_each(O opt,T&...x){
-	(opt(x),...);
-}
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
+ll n,k;
+
 void Main(int Case){
+	scanf("%lld%lld",&n,&k);
+	
+	std::function<pair<ll,ll>(ll,ll)>Dfs=[&](ll l,ll r){
+		if(r-l+1<k)return pair<ll,ll>{0,0};
+		else{
+			ll ans=0,m=(l+r)/2;
+			if((r-l+1)&1){
+				ans+=m;
+				auto [x,y]=Dfs(l,m-1);
+				ans+=2*x+(m-l+1)*y;
+				return pair<ll,ll>{ans,y*2+1};
+			}
+			else{
+				auto [x,y]=Dfs(l,m);
+				ans+=2*x+(m-l+1)*y;
+				return pair<ll,ll>{ans,y*2};
+			}
+		}
+		return pair<ll,ll>{0,0};
+	};
+	
+	printf("%lld\n",Dfs(1,n).fi);
 }
 
 int main(){

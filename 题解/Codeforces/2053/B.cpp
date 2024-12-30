@@ -14,15 +14,43 @@ template<typename... Args>
 void Clear(Args&... args){
     (Clear(args), ...);//必须加括号
 }
-template<typename O,typename T>
-void For_each(O opt,T&x){opt(x);}
-template<typename O,typename...T>
-void For_each(O opt,T&...x){
-	(opt(x),...);
-}
 std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
+
+const int MaxN=210000;
+
+array<int,MaxN>Li,Ri;
+array<int,MaxN*2>T,S;
+array<int,MaxN>Ans;
+
 void Main(int Case){
+	int n;
+	
+	scanf("%d",&n);
+	
+	for(int i=1;i<=2*n;i++)
+		T[i]=0,S[i]=0;
+	
+	for(int i=1;i<=n;i++){
+		scanf("%d%d",&Li[i],&Ri[i]);
+		if(Li[i]==Ri[i])T[Li[i]]=1,S[Li[i]]++;
+	}
+	for(int i=1;i<=2*n;i++)
+		T[i]+=T[i-1];
+	for(int i=1;i<=n;i++){
+		if(Li[i]==Ri[i]){
+			if(S[Li[i]]==1)Ans[i]=true;
+			else Ans[i]=false;
+		}
+		else{
+			int t=Ri[i]-Li[i]+1;
+			if(T[Ri[i]]-T[Li[i]-1]==t)Ans[i]=false;
+			else Ans[i]=true;
+		}
+	}
+	for(int i=1;i<=n;i++)
+		putchar(Ans[i]+'0');
+	puts("");
 }
 
 int main(){
