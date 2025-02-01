@@ -727,7 +727,7 @@ inline void Solve(int from){
 	Visit[from]=Test[0]=true;CalcAns(from);
 	for(int k=Last[from];k!=-1;k=Next[k]){
 		if(Visit[To[k]])continue;
-		sum=Size[To[k]];
+		sum=Size[To[k]];//这个写法不会影响时间复杂度
 		Maxi[root=0]=0x3f3f3f3f;
 		CalcRoot(To[k],from);
 		Solve(root);
