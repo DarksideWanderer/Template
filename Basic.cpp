@@ -200,6 +200,19 @@ using std::cout;
 #define se second
 #define ll long long
 #define pii pair<int,int>
+template<typename T>
+void Clear(T&x){T y;x.swap(y);}
+template<typename... Args>
+void Clear(Args&... args){
+    (Clear(args), ...);//必须加括号
+}
+template<typename O,typename T>
+void For_each(O opt,T&x){opt(x);}
+template<typename O,typename...T>
+void For_each(O opt,T&...x){
+	(opt(x),...);
+}
+std::default_random_engine E(std::chrono::steady_clock().now().time_since_epoch().count());
 
 void Main(int Case,bool flag=false){
 }
