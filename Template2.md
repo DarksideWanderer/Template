@@ -5,6 +5,22 @@ template<class InputIt, class UnaryFunction>
 UnaryFunction for_each(InputIt first, InputIt last, UnaryFunction f);
 ```
 
+`std::setw(n)`:设置字段宽度(类似于 `printf` 中的宽度).
+
+`std::setfill(c)`:设置填充字符(默认填充空格).
+
+`std::setprecision(n)`:设置小数的精度(类似于 `%.nf`).
+
+`std::fixed`:设置固定小数点格式输出.
+
+`std::scientific`:设置科学计数法格式输出.
+
+`std::left`:设置左对齐输出.
+
+`std::right`:设置右对齐输出.
+
+`std::boolalpha` 和 std::`noboolalpha`:分别表示以 "true"/"false" 或数字(0 和 1)形式输出布尔值.
+
 ```cpp
 #include<bits/stdc++.h>
 //#define Debug

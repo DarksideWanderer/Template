@@ -110,7 +110,8 @@
 		"__split_buffer": "cpp",
 		"__tree": "cpp",
 		"rope": "cpp",
-		"slist": "cpp"
+		"slist": "cpp",
+		"__hash_table": "cpp"
 	},
 	"editor.detectIndentation": false,
 	"editor.insertSpaces": false,

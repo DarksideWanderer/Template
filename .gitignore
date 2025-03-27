@@ -6,6 +6,9 @@
 Test.cpp
 In.txt
 Out.txt
+Err.txt
 Work/
 Linker/
 .DS_Store
+Cpp/
+Contest/
